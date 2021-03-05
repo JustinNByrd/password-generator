@@ -18,15 +18,6 @@ generateBtn.addEventListener("click", writePassword);
 // Generate the pasword
 function generatePassword() {
     var errorDiv = document.querySelector("#errorDiv");
-    errorDiv.textContent = "";
-
-    var includeUpperCase = document.forms["requirementsForm"]["radioUpper"].value;
-    var includeLowerCase = document.forms["requirementsForm"]["radioLower"].value;
-    var includeNumeric = document.forms["requirementsForm"]["radioNumeric"].value;
-    var includeSpecial = document.forms["requirementsForm"]["radioSpecial"].value;
-    var passwordLength = document.forms["requirementsForm"]["passwordLength"].value;
-    var enforceInclusion = document.forms["requirementsForm"]["enforceInclusion"].checked;
-
     var upperCaseChars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
     var lowerCaseChars = "abcdefghijklmnopqrstuvwxyz";
     var numericChars = "0123456789";
@@ -35,6 +26,17 @@ function generatePassword() {
     var generatedPassword = "";
     var conditionsMet;
     var charTypeIncluded;
+
+    // Reset any current error message
+    errorDiv.textContent = "";
+
+    // Read user selected values from form
+    var includeUpperCase = document.forms["requirementsForm"]["radioUpper"].value;
+    var includeLowerCase = document.forms["requirementsForm"]["radioLower"].value;
+    var includeNumeric = document.forms["requirementsForm"]["radioNumeric"].value;
+    var includeSpecial = document.forms["requirementsForm"]["radioSpecial"].value;
+    var passwordLength = document.forms["requirementsForm"]["passwordLength"].value;
+    var enforceInclusion = document.forms["requirementsForm"]["enforceInclusion"].checked;
 
     // Add user selected char types into charPool
     if (includeUpperCase == "yes") {
