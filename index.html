@@ -19,24 +19,27 @@
                 <h2>Generate a Password</h2>
             </div>
             <div class="requirementsFormDiv">
+                <!-- form for user to input requirements -->
                 <form name="requirementsForm" id="requirementsForm">
                     <p>Would you like to include uppercase characters?</p>
-                    <input type="radio" id="upperYes" name="radioUpper" value="yes"><label for="yes">Yes</label>
+                    <input type="radio" id="upperYes" name="radioUpper" value="yes" checked><label for="yes">Yes</label>
                     <input type="radio" id="upperNo" name="radioUpper" value="no"><label for="yes">No</label>
                     <p>Would you like to include lowercase characters?</p>
-                    <input type="radio" id="lowerYes" name="radioLower" value="yes"><label for="yes">Yes</label>
+                    <input type="radio" id="lowerYes" name="radioLower" value="yes" checked><label for="yes">Yes</label>
                     <input type="radio" id="lowerNo" name="radioLower" value="no"><label for="yes">No</label>
                     <p>Would you like to include numeric characters?</p>
-                    <input type="radio" id="numericYes" name="radioNumeric" value="yes"><label for="yes">Yes</label>
+                    <input type="radio" id="numericYes" name="radioNumeric" value="yes" checked><label for="yes">Yes</label>
                     <input type="radio" id="numericrNo" name="radioNumeric" value="no"><label for="yes">No</label>
                     <p>Would you like to include special characters?</p>
-                    <input type="radio" id="specialYes" name="radioSpecial" value="yes"><label for="yes">Yes</label>
+                    <input type="radio" id="specialYes" name="radioSpecial" value="yes" checked><label for="yes">Yes</label>
                     <input type="radio" id="specialrNo" name="radioSpecial" value="no"><label for="yes">No</label>
                     <br><br>
-                    <input type="checkbox" id="enforceInclusion" name="enforceInclusion"> <label for="enforceInclusion">Would you like for at least one of each character type to be included?</label>
+                    <input type="checkbox" id="enforceInclusion" name="enforceInclusion" checked> <label for="enforceInclusion">Would you like for at least one of each character type to be included?</label>
                     <p>Select a number between 8 and 128 for password length.<br>
-                    <input type="number" id="passwordLength" name="passwordLength" min="8" max="128"></p>
+                    <input type="number" id="passwordLength" name="passwordLength" min="8" max="128" value="8"></p>
                 </form>
+                <!-- Place holder for error messages -->
+                <div id="errorDiv"></div>
             </div>
             <div class="card-body">
                 <textarea readonly id="password" placeholder="Your Secure Password"
