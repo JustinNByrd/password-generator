@@ -40,20 +40,16 @@ function generatePassword() {
 
     // Add user selected char types into charPool
     if (includeUpperCase == "yes") {
-        for (i=0; i<upperCaseChars.length; i++)
-            charPool+=upperCaseChars.charAt(i);
+        charPool=upperCaseChars;
     }
     if (includeLowerCase == "yes") {
-        for (i=0; i<lowerCaseChars.length; i++)
-            charPool+=lowerCaseChars.charAt(i);
+        charPool+=lowerCaseChars;
     }
     if (includeNumeric == "yes") {
-        for (i=0; i<numericChars.length; i++)
-            charPool+=numericChars.charAt(i);
+        charPool+=numericChars;
     }
     if (includeSpecial == "yes") {
-        for (i=0; i<specialChars.length; i++)
-            charPool+=specialChars.charAt(i);
+        charPool+=specialChars;
     }
     
     // Make sure user selected at least one char type and display error if needed
@@ -103,7 +99,7 @@ function generatePassword() {
                 if (charTypeIncluded == false)
                     conditionsMet = false;
             }
-           if (includeLowerCase == "yes") {
+           if (includeLowerCase == "yes" && conditionsMet == true) {
                 charTypeIncluded = false;
                 i=0;
                 while (charTypeIncluded == false && i<generatedPassword.length) {
@@ -114,7 +110,7 @@ function generatePassword() {
                 if (charTypeIncluded == false)
                     conditionsMet = false;
             }
-            if (includeNumeric == "yes") {
+            if (includeNumeric == "yes" && conditionsMet == true) {
                 charTypeIncluded = false;
                 i=0;
                 while (charTypeIncluded == false && i<generatedPassword.length) {
@@ -125,7 +121,7 @@ function generatePassword() {
                 if (charTypeIncluded == false)
                     conditionsMet = false;
             }
-            if (includeSpecial == "yes") {
+            if (includeSpecial == "yes" && conditionsMet == true) {
                 charTypeIncluded = false;
                 i=0;
                 while (charTypeIncluded == false && i<generatedPassword.length) {
