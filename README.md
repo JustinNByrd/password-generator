@@ -8,4 +8,4 @@ This password generator will generate passwords from 8 to 128 characters in leng
 [Password Generator deployment](https://justinnbyrd.github.io/password-generator/)
 
 ## Author
-Justin Byrd [email](justin_byrd@hotmail.com)
+Justin Byrd [email](mailto:justin_byrd@hotmail.com)
